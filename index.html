@@ -1,20 +1,53 @@
-                                              <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Crepería</title>
+    <title>La Crepería - Menú</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1a1412;
+            background-color: #121010;
             color: #f3f4f6;
             margin: 0;
             padding: 20px;
         }
-        h1, h2, h3 {
-            color: #f87171;
+        .header-container {
             text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e53935;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #e53935;
+            margin: 5px 0;
+            font-size: 28px;
+        }
+        .social-links {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #f3f4f6;
+            text-decoration: none;
+            background: #251e1d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #e53935;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .social-links a:hover {
+            background: #e53935;
         }
         .menu-container {
             display: grid;
@@ -23,10 +56,11 @@
             margin-top: 20px;
         }
         .menu-card {
-            background: #29221e;
+            background: #1e1817;
             padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+            border-left: 4px solid #e53935;
         }
         .food-img img {
             width: 100%;
@@ -34,8 +68,18 @@
             object-fit: cover;
             border-radius: 6px;
         }
+        .menu-card h3 {
+            color: #ff5252;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .menu-card p {
+            color: #d1d5db;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
         .price {
-            color: #34d399;
+            color: #4ade80;
             font-weight: bold;
             font-size: 18px;
         }
@@ -48,22 +92,46 @@
         }
         .tab {
             background: transparent;
-            border: 1px solid #f87171;
-            color: #f87171;
+            border: 2px solid #e53935;
+            color: #ff5252;
             padding: 10px 20px;
-            border-radius: 20px;
+            border-radius: 25px;
             cursor: pointer;
             font-weight: bold;
+            transition: all 0.3s ease;
         }
         .tab.active, .tab:hover {
-            background: #f87171;
+            background: #e53935;
             color: white;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
     </style>
 </head>
 <body>
 
-    <h1>LA CREPERIA</h1>
+    <div class="header-container">
+        <img src="https://i.ibb.co/6JVKv8T/Copia-de-Carta-La-Creperia-20260909-122629-0007.jpg" alt="La Creperia Logo" class="logo">
+        <h1>LA CREPERIA</h1>
+        <div class="social-links">
+            <a href="https://instagram.com/lacreperiarc" target="_blank">Instagram: @lacreperiarc</a>
+            <a href="https://wa.me/543585702934" target="_blank">📲 Pedidos WhatsApp</a>
+        </div>
+    </div>
     
     <div class="nav-links">
         <button class="tab active" data-category="crepes-dulces">Crepes dulces</button>
@@ -73,6 +141,10 @@
     </div>
 
     <div id="menu-grid" class="menu-container"></div>
+
+    <a href="https://wa.me/543585702934" class="whatsapp-float" target="_blank">
+        Pedir por WhatsApp
+    </a>
 
     <script>
     const menu = {
