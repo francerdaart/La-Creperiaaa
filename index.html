@@ -53,7 +53,7 @@
             border-color: #e53935;
         }
 
-        /* Sección de Inicio / Bienvenida con tu Logo de fondo */
+        /* Sección de Inicio / Bienvenida con tu nuevo fondo */
         .hero {
             flex: 1;
             display: flex;
@@ -62,7 +62,7 @@
             align-items: center;
             text-align: center;
             padding: 40px 20px;
-            background: linear-gradient(rgba(13,11,11,0.85), rgba(13,11,11,0.95)), url('https://i.ibb.co/jPQTQNHK/Screenshot-20260910-232510-Instagram.jpg');
+            background: linear-gradient(rgba(13,11,11,0.85), rgba(13,11,11,0.95)), url('https://i.ibb.co/v62KS6GY/file-00000000be60820ea6ed946abc2d4c13.png');
             background-size: cover;
             background-position: center;
         }
@@ -179,11 +179,24 @@
         .card {
             background-color: #161212;
             border-radius: 12px;
-            padding: 20px;
+            overflow: hidden;
             border: 1px solid #262020;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #262020;
+        }
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
         }
         .card h3 {
             font-size: 18px;
@@ -199,17 +212,6 @@
             color: #4ade80;
             font-weight: bold;
             font-size: 16px;
-        }
-        .card a.img-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #e53935;
-            font-size: 13px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .card a.img-link:hover {
-            text-decoration: underline;
         }
 
         .back-home {
@@ -333,12 +335,14 @@
         const grid = document.getElementById('grid-menu');
         grid.innerHTML = menu[cat].map(item => `
             <div class="card">
-                <div>
-                    <h3>${item.name}</h3>
-                    <p>${item.description}</p>
-                    ${item.image ? `<a href="${item.image}" target="_blank" class="img-link">Ver foto del plato 📷</a>` : ''}
+                ${item.image ? `<img src="${item.image}" alt="${item.name}" class="card-img">` : ''}
+                <div class="card-content">
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                    <div class="price">${item.price}</div>
                 </div>
-                <div class="price">${item.price}</div>
             </div>
         `).join('');
     }
