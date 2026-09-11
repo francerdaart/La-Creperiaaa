@@ -35,10 +35,22 @@
         .logo-text span {
             color: #e53935;
         }
-        .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-            color: #ffffff;
+        .social-header {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .social-header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            background: #1a1616;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #333;
+        }
+        .social-header a:hover {
+            border-color: #e53935;
         }
 
         /* Sección de Inicio / Bienvenida */
@@ -106,7 +118,7 @@
             cursor: pointer;
         }
 
-        /* Sección de la Carta / Menú (Oculta al inicio hasta que eligen ver carta) */
+        /* Sección de la Carta / Menú */
         .menu-section {
             display: none;
             padding: 30px 20px;
@@ -133,7 +145,7 @@
             font-size: 14px;
         }
 
-        /* Pestañas de categorías estilo la foto */
+        /* Pestañas de categorías */
         .category-tabs {
             display: flex;
             justify-content: center;
@@ -214,7 +226,10 @@
 
     <header>
         <div class="logo-text">LA <span>CREPERIA</span></div>
-        <div class="menu-icon" onclick="irAlInicio()">☰</div>
+        <div class="social-header">
+            <a href="https://instagram.com/lacreperiarc" target="_blank">📸 @lacreperiarc</a>
+            <a href="https://wa.me/543585702934" target="_blank">📲 WhatsApp</a>
+        </div>
     </header>
 
     <section id="home-view" class="hero">
@@ -250,34 +265,34 @@
     <script>
     const menu = {
       "crepes-dulces": [
-        { "name": "Nutella", "description": "Crepe relleno de pura Nutella.", "price": "$8.000", "image": "https://i.ibb.co/bM7q9307/nutella-limpia" },
-        { "name": "Nutella y Frutillas", "description": "Nutella con frutillas frescas.", "price": "$9.000", "image": "https://i.ibb.co/h1W7d6n7/nutellayfruti" },
-        { "name": "Nutella y Plátano", "description": "Nutella con rodajas de plátano.", "price": "$9.000" },
-        { "name": "Dulce de Leche", "description": "Clásico dulce de leche.", "price": "$6.000" },
-        { "name": "Dulce de Leche y Banana", "description": "Dulce de leche con rodajas de plátano.", "price": "$7.000" },
-        { "name": "ChocoCrep", "description": "Mousse de dulce de leche y granos/chispas.", "price": "$9.000" },
-        { "name": "Pistacho", "description": "Pistacho con chocolate blanco.", "price": "$8.000" },
-        { "name": "Combinado", "description": "Elegí 2 sabores: Nutella, Pistacho, Dulce de Leche o Chocolate.", "price": "$8.000" }
+        { "name": "Nutella", "description": "Crepe relleno de pura Nutella.", "price": "$8.000", "image": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Nutella y Frutillas", "description": "Nutella con frutillas frescas.", "price": "$9.000", "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Nutella y Plátano", "description": "Nutella con rodajas de plátano.", "price": "$9.000", "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Dulce de Leche", "description": "Clásico dulce de leche.", "price": "$6.000", "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Dulce de Leche y Banana", "description": "Dulce de leche con rodajas de plátano.", "price": "$7.000", "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=500&q=80" },
+        { "name": "ChocoCrep", "description": "Mousse de dulce de leche y granos/chispas.", "price": "$9.000", "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Pistacho", "description": "Pistacho con chocolate blanco.", "price": "$8.000", "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Combinado", "description": "Elegí 2 sabores: Nutella, Pistacho, Dulce de Leche o Chocolate.", "price": "$8.000", "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" }
       ],
       "crepes-salados": [
-        { "name": "1", "description": "Jamón con queso y huevo.", "price": "$9.000" },
-        { "name": "2", "description": "Jamón, queso, huevo, rúcula y tomate.", "price": "$10.000" },
-        { "name": "3", "description": "Panceta, queso, huevo, rúcula y tomate.", "price": "$12.000" },
-        { "name": "4", "description": "Jamón crudo, queso, rúcula, palta y tomate seco.", "price": "$12.000" },
-        { "name": "5", "description": "Pollo, cebolla, cebolla de verdeo, pimientos y queso.", "price": "$10.000" },
-        { "name": "6", "description": "Champiñones, cebolla de verdeo, crema y queso.", "price": "$12.000" },
-        { "name": "7", "description": "Bondiola, cebolla, cebolla de verdeo, pimientos y queso.", "price": "$12.000" }
+        { "name": "1", "description": "Jamón con queso y huevo.", "price": "$9.000", "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80" },
+        { "name": "2", "description": "Jamón, queso, huevo, rúcula y tomate.", "price": "$10.000", "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" },
+        { "name": "3", "description": "Panceta, queso, huevo, rúcula y tomate.", "price": "$12.000", "image": "https://images.unsplash.com/photo-1553979459-d22294743ec9?auto=format&fit=crop&w=500&q=80" },
+        { "name": "4", "description": "Jamón crudo, queso, rúcula, palta y tomate seco.", "price": "$12.000", "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80" },
+        { "name": "5", "description": "Pollo, cebolla, cebolla de verdeo, pimientos y queso.", "price": "$10.000", "image": "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=500&q=80" },
+        { "name": "6", "description": "Champiñones, cebolla de verdeo, crema y queso.", "price": "$12.000", "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" },
+        { "name": "7", "description": "Bondiola, cebolla, cebolla de verdeo, pimientos y queso.", "price": "$12.000", "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" }
       ],
       "panchos": [
-        { "name": "Súper Pancho", "description": "Con aderezos a elección + papas.", "price": "$3.500", "image": "https://i.ibb.co/6JVKv8T/Copia-de-Carta-La-Creperia-20260909-122629-0007.jpg" }
+        { "name": "Súper Pancho", "description": "Con aderezos a elección + papas.", "price": "$3.500", "image": "https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=500&q=80" }
       ],
       "bebidas": [
-        { "name": "Gaseosa 500ml", "description": "Línea Coca-Cola / Variedad.", "price": "$2.500" },
-        { "name": "Agua sin gas 500ml", "description": "Agua mineral.", "price": "$2.500" },
-        { "name": "Licuado de Frutilla 500ml", "description": "Licuado fresco de frutilla.", "price": "$5.000" },
-        { "name": "Licuado de Banana 500ml", "description": "Licuado fresco de banana.", "price": "$5.000" },
-        { "name": "Cerveza Andes Rubia 473ml", "description": "Lata de cerveza fría.", "price": "$5.000" },
-        { "name": "Cerveza Stella Artois 473ml", "description": "Lata de cerveza fría.", "price": "$6.000" }
+        { "name": "Gaseosa 500ml", "description": "Línea Coca-Cola / Variedad.", "price": "$2.500", "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Agua sin gas 500ml", "description": "Agua mineral.", "price": "$2.500", "image": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Licuado de Frutilla 500ml", "description": "Licuado fresco de frutilla.", "price": "$5.000", "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Licuado de Banana 500ml", "description": "Licuado fresco de banana.", "price": "$5.000", "image": "https://images.unsplash.com/photo-1575845704991-6f65d6fec98d?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Cerveza Andes Rubia 473ml", "description": "Lata de cerveza fría.", "price": "$5.000", "image": "https://images.unsplash.com/photo-1608270105747-23f2f87c53d9?auto=format&fit=crop&w=500&q=80" },
+        { "name": "Cerveza Stella Artois 473ml", "description": "Lata de cerveza fría.", "price": "$6.000", "image": "https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=500&q=80" }
       ]
     };
 
@@ -285,11 +300,9 @@
         document.getElementById('home-view').style.display = 'none';
         document.getElementById('menu-view').style.display = 'block';
         
-        // Activar el botón correspondiente
         const botones = document.querySelectorAll('.tab-btn');
         botones.forEach(b => b.classList.remove('active'));
         
-        // Buscar el botón de la categoría activa
         if(categoria === 'crepes-dulces') botones[0].classList.add('active');
         if(categoria === 'crepes-salados') botones[1].classList.add('active');
         if(categoria === 'panchos') botones[2].classList.add('active');
