@@ -120,7 +120,7 @@
         .menu-section {
             display: none;
             padding: 30px 20px;
-            max-width: 1000px;
+            max-width: 600px;
             margin: 0 auto;
             width: 100%;
         }
@@ -135,7 +135,7 @@
             margin-bottom: 5px;
         }
         .menu-header-text h2 {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 10px;
         }
         .menu-header-text p {
@@ -155,7 +155,7 @@
             background-color: #1a1616;
             color: #ffffff;
             border: 1px solid #333;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
@@ -164,49 +164,47 @@
         }
         .tab-btn.active {
             background-color: #0d0b0b;
-            border: 1px solid #262020;
+            border: 1px solid #e53935;
         }
 
-        /* Grilla del Menú */
+        /* Grilla del Menú (Estilo Tarjeta Vertical con imagen arriba) */
         .grid-menu {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
         .card {
             background: #161313;
             border: 1px solid #262020;
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
+            flex-direction: column; /* Imagen arriba, texto abajo */
             overflow: hidden;
-            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .card-img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain; /* Ajustado para respetar las proporciones originales de la imagen */
-            background-color: #111; /* Fondo oscuro por si la imagen es más angosta */
-            border-right: 1px solid #262020;
-            flex-shrink: 0;
+            width: 100%;
+            height: 220px;
+            object-fit: cover; /* Imagen grande ocupando todo el ancho superior */
+            border-bottom: 1px solid #262020;
         }
         .card-content {
-            padding: 15px;
-            flex: 1;
+            padding: 20px;
         }
         .card h3 {
-            font-size: 18px;
-            margin-bottom: 6px;
+            font-size: 22px;
+            margin-bottom: 8px;
             color: #ffffff;
         }
         .card p {
             color: #aaaaaa;
-            font-size: 13px;
+            font-size: 14px;
             margin-bottom: 15px;
         }
         .card .price {
-            color: #aade80;
+            color: #4cd137; /* Color verde claro para el precio igual al ejemplo */
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
         }
         .back-home {
             text-align: center;
@@ -224,7 +222,6 @@
 </head>
 <body>
 
-    <!-- Barra Superior -->
     <header>
         <div class="logo-text">LA <span>CREPERIA</span></div>
         <div class="social-header">
@@ -233,7 +230,6 @@
         </div>
     </header>
 
-    <!-- Pantalla de Inicio (Hero) -->
     <section id="home-view" class="hero">
         <div class="subtitle-top">🥞 CREPES • 🌭 PANCHOS</div>
         <h1>Algo rico<br><span>te está</span><br>esperando.</h1>
@@ -244,7 +240,6 @@
         </div>
     </section>
 
-    <!-- Sección del Menú / Carta -->
     <section id="menu-section" class="menu-section">
         <div class="menu-header-text">
             <h4>LA CARTA</h4>
